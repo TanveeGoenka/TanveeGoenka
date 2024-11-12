@@ -1,0 +1,224 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Rectangles */
+.rectangle-top {
+    position: absolute;
+    width: 100vw;
+    height: 692px;
+    left: 0;
+    top: 0;
+    background: #ADD8E6;
+    z-index: 1;
+}
+
+.rectangle-bottom {
+    position: absolute;
+    width: 100vw;
+    height: 400px; /* Reduced height */
+    left: 0;
+    top: 680px;
+    background: #90EE90;
+    z-index: 1;
+}
+
+/* Background Ellipses */
+.ellipse-left {
+    position: absolute;
+    width: 979.83px;
+    height: 299.44px;
+    left: -166.68px;
+    top: 600px; /* Adjusted position */
+    background: #90EE90;
+    transform: matrix(0.99, -0.14, 0.14, 0.99, 0, 0);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.ellipse-right {
+    position: absolute;
+    width: 810px;
+    height: 314px;
+    left: 733px;
+    top: 580px; /* Adjusted position */
+    background: #FFFFFF;
+    transform: rotate(-3.43deg);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Main Image */
+.main-image {
+    position: absolute;
+    width: 1095.81px;
+    height: 800.62px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    background-image: url("images/bloom and drizzle.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+/* Background Gradient Frame */
+.background-frame {
+    position: absolute;
+    width: 100vw;
+    height: 541px;
+    left: 0;
+    top: -127px;
+    background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.5) 32.67%, 
+        rgba(186, 234, 250, 0.5) 63.17%, 
+        rgba(173, 216, 230, 0.205) 86.67%, 
+        rgba(173, 216, 230, 0) 100%
+    );
+    z-index: 3;
+}
+
+/* Navigation Bar */
+.navigation-bar {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 2px;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-wrapper {
+    position: relative;
+    width: 926px;
+    height: 70px;
+}
+
+/* Common styles for nav items */
+.nav-item {
+    position: absolute;
+    width: 168px;
+    height: 49px;
+    top: 8px;
+}
+
+.nav-rectangle {
+    position: absolute;
+    width: 168px;
+    height: 49px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-text {
+    position: absolute;
+    font-family: 'Courier New';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: #AA62E3;
+    top: 14px;
+    text-align: center;
+    width: 100%;
+}
+
+/* About Me */
+.education {
+    left: 0;
+}
+
+/* Projects */
+.projects {
+    left: 196px;
+}
+
+/* Home Button */
+.home-button {
+    position: absolute;
+    width: 180px;
+    height: 70px;
+    left: 377px;
+    top: 0;
+}
+
+.home-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Skills */
+.skills {
+    left: 562px;
+}
+
+/* Contact */
+.contact {
+    left: 758px;
+}
+
+/* Content spacing */
+.content {
+    padding-top: 80px;
+    position: relative;
+    z-index: 4;
+    min-height: 200vh;
+}
+
+/* Hover effects */
+.nav-item:hover {
+    cursor: pointer;
+}
+
+.nav-item:hover .nav-rectangle {
+    background: #f8f8f8;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1440px) {
+    .nav-wrapper {
+        transform: scale(0.9);
+        transform-origin: center top;
+    }
+    
+    .main-image {
+        transform: translateX(-50%) scale(0.9);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-wrapper {
+        transform: scale(0.8);
+        transform-origin: center top;
+    }
+    
+    .main-image {
+        transform: translateX(-50%) scale(0.7);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-wrapper {
+        transform: scale(0.7);
+        transform-origin: center top;
+    }
+    
+    .main-image {
+        transform: translateX(-50%) scale(0.5);
+    }
+}
