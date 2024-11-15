@@ -266,34 +266,41 @@ body {
 /* Navigation Bar */
 .navigation-bar {
     background: transparent;
-    position: fixed;
+    position: relative;
     width: 100%;
-    height: 70px;
+    height: 5vmin;
+    min-height: 50px;
     top: 0;
     left: 0;
     z-index: 1000;
     display: flex;
     justify-content: center;
+    padding: 0 0; 
 }
 
 .nav-wrapper {
     position: relative;
-    width: 926px;
-    height: 70px;
+    width: 80%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Common styles for nav items */
 .nav-item {
-    position: absolute;
-    width: 168px;
-    height: 49px;
-    top: 8px;
+    position: relative;
+    width: 22%;
+    height: 100%;
+    margin-top: 8px;
 }
 
 .nav-rectangle {
-    position: absolute;
-    width: 168px;
-    height: 49px;
+    position: relative;
+    width: 100%;
+    height: 70%;
+    min-height: 40px;
     border-radius: 20px;
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -305,27 +312,22 @@ body {
     font-family: 'Courier New';
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
-    line-height: 23px;
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: 1.2;
     color: #AA62E3;
-    top: 14px;
+    top: 50%;
+    transform: translateY(-50%);
     text-align: center;
     width: 100%;
 }
 
-/* Navigation item positions */
-.education { left: 0; }
-.projects { left: 196px; }
-.skills { left: 562px; }
-.contact { left: 758px; }
-
 /* Home Button */
 .home-button {
-    position: absolute;
-    width: 180px;
-    height: 70px;
-    left: 377px;
-    top: 0;
+    position: relative;
+    width: 15%;
+    max-width: 180px;
+    height: auto;
+    aspect-ratio: 180/70;
 }
 
 .home-button img {
@@ -1227,17 +1229,15 @@ body {
 
 @media screen and (max-width: 768px) {
     .nav-wrapper {
-        transform: scale(0.7);
-        transform-origin: center top;
+        width:95%;
     }
 
-    .nav-container {
-        gap: 1rem;
+    .nav-rectangle {
+        border-radius: 15px;
     }
     
     .nav-item {
-        font-size: 1rem;
-        padding: 0.4rem 0.8rem;
+        width: 23%;
     }
 
     .swiper-slide img {
@@ -1318,9 +1318,16 @@ body {
         gap: 0.5rem;
     }
     
+    .home-button {
+        width: 20%;
+    }
+
+    .nav-wrapper {
+        width: 100%;
+    }
+
     .nav-item {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.6rem;
+         width: 24%;
     }
 
     .swiper-slide img {
